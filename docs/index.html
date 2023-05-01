@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/emojis/791742603183259648.webp?size=96&quality=lossless" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Font Generator | AlonsoAliaga Development</title>
+    
+    <meta name="theme-color" content="#9a14ff"/>
+    <meta property="og:title" content="Font Generator | AlonsoAliaga Development">
+    <meta property="og:image" content="https://raw.githubusercontent.com/AlonsoAliaga/alonsoaliaga.github.io/main/assets/img/apple-touch-icon.png">
+    <meta property="og:description" content="Create stylish texts with unique fonts to class up your content. Minecraft chat, scoreboard, tab, title, actionbar and hologram compatible!">
+    <meta property="og:url" content="https://alonsoaliaga.github.io/index.html">
+  </head>
+  <body onload="loadCounter(); checkSite(window); ">
+    <div class="content">
+      <div class="header">
+        <h1 style="font-family: MinecraftBold;">Font <a href="https://alonsoaliaga.com/font-generator" rel="noopener" target="_blank">Generator</a></h1>
+        
+        <div class="options" style="padding: 10px 10px 10px 10px; margin-bottom: 10px;">
+          <h2 class="rainbow" style="font-size:25px; color:transparent">How is this different from other font generators?</h2>
+          All fonts provided in this generator have been tested and should work without<br>
+          issues in minecraft chat, scoreboard, titles or actionbar.<br><br>
+          <span style="font-size: 17px;">
+            <b>⚠️ If you have new fonts, suggest them in our <a href="https://alonsoaliaga.com/discord" rel="noopener" target="_blank">official discord server.</a></b><br>
+            <I>Disclaimer: Some fonts might not work in old versions, all tests are done using latest version.</I>
+          </span>
+        </div>
+
+        <span style="font-family: MinecraftBold;">Options:</span>
+        <div id="appearance" style="display: inline-block;font-family: MinecraftBold;padding: 5px 10px 5px 10px;" class="darkbuttonboxes">
+          <input type="checkbox" checked id="darkmode" onclick="toggleDarkmode();"></input>
+          <label for="darkmode" style="margin-bottom: 0px;margin-top: 0px;"> Dark Mode 👁‍🗨</label>
+        </div><br><br>
+        <input id="inputText" style="text-align: center; display: inline-block; width: 50%;font-family: MinecraftBold;padding: 15px 20px 15px 20px;"
+          type="text" maxlength="100" checked id="darkmode" value="alonsoaliaga.com" class="darkbuttonboxes" oninput="updateOutput(event)" 
+          placeholder="Type your text"></input>
+        <br>
+        <br>
+      </div>
+      <div>
+        <fieldset class="group" style="padding: 0px;"> 
+          <legend id="thelegend">&nbsp;&nbsp;&nbsp;Click in box to copy the text 💬&nbsp;&nbsp;&nbsp;</legend> 
+          <ul id="fonts-table" style="font-size: 18px;">
+            Loading..
+          </ul> 
+        </fieldset><br>
+      </div>
+      <div id="download-all" style="display: inline-block;font-family: MinecraftBold;padding: 5px 10px 5px 10px;" class="darkbuttonboxes">
+        <input type="button" style="outline: none; display: none;" checked id="downloadall" onclick="downloadAll();"></input>
+        <label for="downloadall" style="margin-bottom: 0px;margin-top: 0px;margin-left: 20px;;margin-right: 15px;"> Coming soon 📥</label>
+      </div>
+      <br>
+      <!-- 
+      <label id="graylabel2" class="gray" for="outputText" style="font-weight: bold;"><span style="color: #fc5044;">TIP: </span>Click below to copy the content!</label>
+      <div id="result" onclick="copyTextToClipboard(this.textContent);">
+        <h2 style="font-family: MinecraftBold;">Loading..</h2>
+      </div>
+      -->
+      <br>
+      <!--
+      <div class="options">
+        <div id="table">
+          <input type="checkbox" id="version-mode" onclick="updateResult();"></input>
+          <label for="version-mode" style="margin-bottom: 0px;margin-top: 0px;"> Version Mode 🎉</label>
+          <input type="checkbox" id="whitelist-mode" onclick="updateResult();"></input>
+          <label for="whitelist-mode" style="margin-bottom: 0px;margin-top: 0px;"> Whitelist Mode 🏆</label>
+        </div><br>
+        <fieldset class="group"> 
+          <legend id="thelegend">&nbsp;&nbsp;&nbsp;Select errors to whitelist&nbsp;&nbsp;&nbsp;</legend> 
+          <ul id="table-errors" style="font-size: 18px;" class="checkbox">
+            Loading..
+          </ul> 
+        </fieldset><br>
+        <fieldset class="group" style="padding-bottom: 15px;font-size: 18px;"> 
+          <legend id="thelegend">&nbsp;&nbsp;&nbsp;Common options&nbsp;&nbsp;&nbsp;</legend> 
+          <ul id="table-protocols" class="checkbox">
+            <li>
+              <input class="button-solid" type="checkbox" id="mark-all-option" onclick="markAll(); this.checked = false">
+              <label for="mark-all-option" style="margin-bottom: 0px;margin-top: 0px;">✔️ Check all types</label></input>
+            </li>
+            <li>
+              <input class="button-solid" type="checkbox" id="unmark-all-option" onclick="unmarkAll(); this.checked = false">
+              <label for="unmark-all-option" style="margin-bottom: 0px;margin-top: 0px;">📛 Uncheck all types</label></input>
+            </li>
+          </ul> 
+        </fieldset>
+      </div>
+      -->
+      <!-- <div>
+        <div class="row">
+          <div class="col-md-3" style="font-size: 20px; font-family: MinecraftBold;">
+            <label for="output-indentation">Output indentation: </label>
+            <select id="output-indentation"
+                    class="form-control"
+                    onchange="updateOutputText(event);"
+                    style="font-size: 16px; padding: 5px 0px 5px 30px; width: auto; font-family: MinecraftRegular;">
+              <option value='0'>2 spaces</option>
+              <option value='1'>4 spaces</option>
+              <option value='2'>Tab spacing</option>
+            </select>
+          </div>
+        </div>
+      </div> -->
+      <div class="options">
+        <div style="font-size: 18px ;padding-top: 0px;padding-bottom: 0px; font-family: MinecraftRegular;" class="examples">
+          <h2 style="font-size: 18px; font-family: MinecraftBold;">More tools for you:</h2>
+          <div style="text-align: left;font-size: 20px;">
+            <span>💠</span> <span class="rainbow" style="color:transparent"><a href="http://alonsoaliaga.github.io/generator">HEX Generator (RBG)</a></span><br>
+            <span>💠</span> <span><a href="http://alonsoaliaga.github.io/config-comparator">Config Comparator Updater</a></span><br>
+            <span>💠</span> <span><a href="http://alonsoaliaga.github.io/yaml-parser">YAML/JSON Parser</a></span><br>
+            <span>💠</span> <span><a href="http://alonsoaliaga.github.io/pretty-json">Pretty JSON</a></span><br>
+            <span>💠</span> <span><a href="http://alonsoaliaga.github.io/version-generator">ViaVersion Protocol Generator</a></span>
+          </div>
+          <br>
+          <h2 style="color: transparent;font-size: 18px ;text-align: center; font-family: MinecraftBold;"><a href="https://alonsoaliaga.github.io" rel="noopener" target="_blank">AlonsoAliaga Development</a></h2>
+        </div>
+      </div>
+      <div>
+      <br>
+      <!-- <div id="mybutton">
+        <button class="buttonface"><a href="https://alonsoaliaga.github.io"><img src="https://raw.githubusercontent.com/AlonsoAliaga/alonsoaliaga.github.io/main/assets/img/apple-touch-icon.png"></a></button>
+      </div> -->
+      <div id="mybutton">
+        <div style="position: center;display: inline-block;">
+          <button class="buttonface"><a href="https://alonsoaliaga.github.io"><img src="https://raw.githubusercontent.com/AlonsoAliaga/alonsoaliaga.github.io/main/assets/img/apple-touch-icon.png"></a></button>
+          <br>
+          <div id="visitor-counter" style="text-align: center;">
+            <span id="counter-amount" style="font-family: MinecraftBold;font-weight: bold;">Visits: 0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script ></script>
+  </div>
+
+  <!-- <script src="jquery-1.6.1.min.js"></script> -->
+  <script src="autoresize.jquery.min.js"></script>
+  <script src="js-yaml.min.js"></script>
+  <script src="script.js"></script>
+  <!-- <script src="script.js"></script> -->
+  
+  <script>
+    
+  </script>
+  </body>
+</html>
