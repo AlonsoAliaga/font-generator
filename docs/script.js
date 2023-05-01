@@ -500,7 +500,7 @@ function loadFonts() {
       let fontData = fonts[fontType];
       s += `<div class="text-type"><div class="font-name-type ${(i % 2 === 0?"even":"odd")}">${i}. ${fontData.name}</div> <textarea readonly `+
         `id="${fontType}-box" class="fontsBoxes options" type="text" `+
-        `checked id="${fontType}-option"></textarea><label for="${fontType}-option" `+
+        `checked id="${fontType}-option" onclick="copyTextToClipboard(this.textContent);"></textarea><label for="${fontType}-option" `+
         `></label><br></div>`
       fontData.processed = {};
       if(fontData.data && fontData.data.tosearch && fontData.data.toreplace &&
