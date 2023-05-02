@@ -462,24 +462,27 @@
 }
 .font-name-type.odd {
   float: left;
-  background: #ff309e;
+  background: #740396;
   left: 20px;
 }
 .font-name-type.even {
   float: right;
-  background: #ffd118;
+  background: #504398;
   right: 30px;
 }
 input {
   display: none;
 }
 .fontsBoxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  width: 90%;
-  margin: 10px;
-  padding: 10px;
-  cursor: copy;
   width: inherit;
+  margin: 10px;
+  height: 30px;
+  padding: 10px 10px 0px 10px;
+  cursor: copy;
   list-style-type: none;
   text-align: center;
   vertical-align: middle;
@@ -487,4 +490,46 @@ input {
 ul {
   list-style-type: none;
   padding-inline: 15px;
+}
+#snackbar {
+  visibility: hidden;
+  color: #fff;
+  background-color: #333;
+  min-width: 250px;
+  margin-left: -125px;
+  border-radius: 2px;
+  padding: 16px;
+  text-align: center;
+  left: 50%;
+  bottom: 30px;
+  z-index: 100;
+  position: fixed;
+}
+
+/* This will be activated when the snackbar's class is 'show' which will be added through JS */
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations for fading in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }

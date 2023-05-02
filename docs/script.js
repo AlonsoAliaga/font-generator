@@ -171,6 +171,7 @@ const fonts = {
     }
   }
 }
+let copiedTimeout;
 function copyTextToClipboard(text) {
   let textArea = document.createElement('textarea');
   textArea.value = text;
@@ -183,8 +184,34 @@ function copyTextToClipboard(text) {
   textArea.select();
 
   document.execCommand('copy');
+  /*
+  let copiedElement = document.createElement('copied-element');
+  copiedElement.style.display = "inline-block"
+  if(copiedTimeout) {
+    clearTimeout(copiedTimeout);
+  }
+
+  copiedTimeout = setTimeout(()=>{
+
+    copiedTimeout = undefined;
+  },500);
   alert('You text was copied! Ready to paste!\n\nThanks for using our tool!\n- AlonsoAliaga');
+  */
+  alertCopied();
   document.body.removeChild(textArea);
+}
+function alertCopied() {
+  if(copiedTimeout) {
+    clearTimeout(copiedTimeout);
+    var sb = document.getElementById("snackbar");
+    sb.className = sb.className.replace("show", "");
+  }
+  var sb = document.getElementById("snackbar");
+
+  //this is where the class name will be added & removed to activate the css
+  sb.className = "show";
+
+  copiedTimeout = setTimeout(()=>{ sb.className = sb.className.replace("show", ""); }, 3000);
 }
 function markAll() {
   for(let errorType of Object.keys(errorsFormat)) {
@@ -550,11 +577,14 @@ function updateOutput(event) {
   let inputText = document.getElementById("inputText");
   if(inputText) {
     //console.log(`Input: ${inputText.value}`)
+    let theText;
+    if(!inputText.value || inputText.value.length === 0) theText = "Type your text above"
+    else theText = inputText.value;
     for(let identifier of Object.keys(fonts)) {
       let toUpdate = document.getElementById(`${identifier}-box`)
       if(toUpdate) {
         let fontData = fonts[identifier];
-        let toModify = inputText.value;
+        let toModify = theText;
         let toUse = "";
         if(typeof fontData.before != "undefined") {
           toModify = fontData.before(toModify);
@@ -569,6 +599,13 @@ function updateOutput(event) {
         toUpdate.innerText = toUse;
       }
     }
+  }
+}
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+} else {
+  window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
   }
 }
 toggleDarkmode();
