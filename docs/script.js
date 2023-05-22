@@ -572,8 +572,13 @@ function loadCounter() {
    });
  }
 }
-function updateOutput(event) {
+function updateOutputBackup(event) {
   //console.log(event)
+  if(event && typeof event.style !== "undefined") {
+    event.style.height = "1px";
+    console.log(`event.scrollHeight: ${event.scrollHeight}`)
+    event.style.height = ((event.scrollHeight - 13))+"px";
+  }
   let inputText = document.getElementById("inputText");
   if(inputText) {
     //console.log(`Input: ${inputText.value}`)
@@ -596,7 +601,63 @@ function updateOutput(event) {
         if(typeof fontData.after != "undefined") {
           toUse = fontData.after(toUse);
         }
-        toUpdate.innerText = toUse;
+        toUpdate.innerText = toUse.replace(/\r\n/g,"<br>");
+        console.log(toUse);
+        console.log(toUpdate.innerText);
+      }
+    }
+  }
+}
+function updateOutput(event) {
+  //console.log(event)
+  let inputText = document.getElementById("inputText");
+  if(event && typeof event.style !== "undefined") {
+    event.style.height = "1px";
+    //console.log(`event.scrollHeight: ${event.scrollHeight}`)
+    event.style.height = ((event.scrollHeight - 10))+"px";
+  }else{
+    inputText.style.height = "1px";
+    //console.log(`event.scrollHeight: ${event.scrollHeight}`)
+    inputText.style.height = ((inputText.scrollHeight - 8))+"px";
+  }
+  if(inputText) {
+    let textLines = inputText.value.split("\n");
+    if(inputText.value.replace(/\n/g,"").trim().length == 0) textLines = ["Type your text above AH!!"];
+    console.log(textLines)
+    //console.log(`Input: ${inputText.value}`)
+    //let theText;
+    //if(!inputText.value || inputText.value.length === 0) theText = "Type your text above"
+    //else theText = inputText.value;
+    for(let identifier of Object.keys(fonts)) {
+      let toUpdate = document.getElementById(`${identifier}-box`)
+      if(toUpdate) {
+        let fontData = fonts[identifier];
+        
+        let textToModify = textLines.concat();
+        let newTextLines = [];
+        for(let line of textToModify) {
+          let toModify = line;
+          let toUse = "";
+          if(typeof fontData.before != "undefined") {
+            toModify = fontData.before(toModify);
+          }
+          let processed = fontData.processed;
+          for (let i = 0; i < toModify.length; i++) {
+            toUse += processed[toModify[i]] || toModify[i];
+          }
+          if(typeof fontData.after != "undefined") {
+            toUse = fontData.after(toUse);
+          }
+          newTextLines.push(toUse);
+        }
+        toUpdate.innerHTML = newTextLines.join("\r\n");
+        toUpdate.style.height
+        console.log(`${identifier} scrollHeight: ${toUpdate.scrollHeight}`)
+        toUpdate.style.height = "1px";
+        toUpdate.style.height = ((toUpdate.scrollHeight - 5))+"px";
+        //toUpdate.innerText = toUse.replace(/\r\n/g,"<br>");
+        //console.log(toUse);
+        //console.log(toUpdate.innerText);
       }
     }
   }
