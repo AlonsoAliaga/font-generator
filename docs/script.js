@@ -623,7 +623,7 @@ function updateOutput(event) {
   if(inputText) {
     let textLines = inputText.value.split("\n");
     if(inputText.value.replace(/\n/g,"").trim().length == 0) textLines = ["Type your text above AH!!"];
-    console.log(textLines)
+    //console.log(textLines)
     //console.log(`Input: ${inputText.value}`)
     //let theText;
     //if(!inputText.value || inputText.value.length === 0) theText = "Type your text above"
@@ -632,7 +632,6 @@ function updateOutput(event) {
       let toUpdate = document.getElementById(`${identifier}-box`)
       if(toUpdate) {
         let fontData = fonts[identifier];
-        
         let textToModify = textLines.concat();
         let newTextLines = [];
         for(let line of textToModify) {
@@ -652,7 +651,7 @@ function updateOutput(event) {
         }
         toUpdate.innerHTML = newTextLines.join("\r\n");
         toUpdate.style.height
-        console.log(`${identifier} scrollHeight: ${toUpdate.scrollHeight}`)
+        //console.log(`${identifier} scrollHeight: ${toUpdate.scrollHeight}`)
         toUpdate.style.height = "1px";
         toUpdate.style.height = ((toUpdate.scrollHeight - 5))+"px";
         //toUpdate.innerText = toUse.replace(/\r\n/g,"<br>");
