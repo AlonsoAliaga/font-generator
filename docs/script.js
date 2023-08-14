@@ -169,6 +169,58 @@ const fonts = {
       tosearch:"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789".split(""),
       toreplace:"ǟɮƈɖɛʄɢɦɨʝӄʟʍռñօքզʀֆȶʊʋաӼʏʐǟɮƈɖɛʄɢɦɨʝӄʟʍռñօքզʀֆȶʊʋաӼʏʐ0123456789".split("")
     }
+  },
+  "separator-1": {
+    "separator": true,
+    "name": "🐪 1.20+ EXCLUSIVE 🐪"
+  },
+  "handwritten": {
+    "name": "Handwritten",
+    "processed": {},
+    "data": {
+      tosearch:"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789".split(""),
+      toreplace:"𝒜 𝐵 𝒞 𝒟 𝐸 𝐹 𝒢 𝐻 𝐼 𝒥 𝒦 𝐿 𝑀 𝒩 Ñ 𝒪 𝒫 𝒬 𝑅 𝒮 𝒯 𝒰 𝒱 𝒲 𝒳 𝒴 𝒵 𝒶 𝒷 𝒸 𝒹 𝑒 𝒻 𝑔 𝒽 𝒾 𝒿 𝓀 𝓁 𝓂 𝓃 ñ 𝑜 𝓅 𝓆 𝓇 𝓈 𝓉 𝓊 𝓋 𝓌 𝓍 𝓎 𝓏 𝟢 𝟣 𝟤 𝟥 𝟦 𝟧 𝟨 𝟩 𝟪 𝟫".split(" ")
+    }
+  },
+  "bold-handwritten": {
+    "name": "Bold Handwritten",
+    "processed": {},
+    "data": {
+      tosearch:"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789".split(""),
+      toreplace:"𝓐 𝓑 𝓒 𝓓 𝓔 𝓕 𝓖 𝓗 𝓘 𝓙 𝓚 𝓛 𝓜 𝓝 Ñ 𝓞 𝓟 𝓠 𝓡 𝓢 𝓣 𝓤 𝓥 𝓦 𝓧 𝓨 𝓩 𝓪 𝓫 𝓬 𝓭 𝓮 𝓯 𝓰 𝓱 𝓲 𝓳 𝓴 𝓵 𝓶 𝓷 ñ 𝓸 𝓹 𝓺 𝓻 𝓼 𝓽 𝓾 𝓿 𝔀 𝔁 𝔂 𝔃 0 1 2 3 4 5 6 7 8 9".split(" ")
+    }
+  },
+  "bold-knight-elegant": {
+    "name": "Bold Knight Elegant",
+    "processed": {},
+    "data": {
+      tosearch:"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789".split(""),
+      toreplace:"𝕬 𝕭 𝕮 𝕯 𝕰 𝕱 𝕲 𝕳 𝕴 𝕵 𝕶 𝕷 𝕸 𝕹 Ñ 𝕺 𝕻 𝕼 𝕽 𝕾 𝕿 𝖀 𝖁 𝖂 𝖃 𝖄 𝖅 𝖆 𝖇 𝖈 𝖉 𝖊 𝖋 𝖌 𝖍 𝖎 𝖏 𝖐 𝖑 𝖒 𝖓 ñ 𝖔 𝖕 𝖖 𝖗 𝖘 𝖙 𝖚 𝖛 𝖜 𝖝 𝖞 𝖟 0 1 2 3 4 5 6 7 8 9".split(" ")
+    }
+  },
+  "knight-elegant": {
+    "name": "Knight Elegant",
+    "processed": {},
+    "data": {
+      tosearch:"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789".split(""),
+      toreplace:"𝔄 𝔅 ℭ 𝔇 𝔈 𝔉 𝔊 ℌ ℑ 𝔍 𝔎 𝔏 𝔐 𝔑 Ñ 𝔒 𝔓 𝔔 ℜ 𝔖 𝔗 𝔘 𝔙 𝔚 𝔛 𝔜 ℨ 𝔞 𝔟 𝔠 𝔡 𝔢 𝔣 𝔤 𝔥 𝔦 𝔧 𝔨 𝔩 𝔪 𝔫 ñ 𝔬 𝔭 𝔮 𝔯 𝔰 𝔱 𝔲 𝔳 𝔴 𝔵 𝔶 𝔷 0 1 2 3 4 5 6 7 8 9".split(" ")
+    }
+  },
+  "boxed": {
+    "name": "Boxed",
+    "processed": {},
+    "data": {
+      tosearch:"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789".split(""),
+      toreplace:"🅰 🅱 🅲 🅳 🅴 🅵 🅶 🅷 🅸 🅹 🅺 🅻 🅼 🅽 Ñ 🅾 🅿 🆀 🆁 🆂 🆃 🆄 🆅 🆆 🆇 🆈 🆉 🅰 🅱 🅲 🅳 🅴 🅵 🅶 🅷 🅸 🅹 🅺 🅻 🅼 🅽 ñ 🅾 🅿 🆀 🆁 🆂 🆃 🆄 🆅 🆆 🆇 🆈 🆉 0 1 2 3 4 5 6 7 8 9".split(" ")
+    }
+  },
+  "x-font": {
+    "name": "𝕏",
+    "processed": {},
+    "data": {
+      tosearch:"ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789".split(""),
+      toreplace:"𝔸 𝔹 ℂ 𝔻 𝔼 𝔽 𝔾 ℍ 𝕀 𝕁 𝕂 𝕃 𝕄 ℕ Ñ 𝕆 ℙ ℚ ℝ 𝕊 𝕋 𝕌 𝕍 𝕎 𝕏 𝕐 ℤ 𝕒 𝕓 𝕔 𝕕 𝕖 𝕗 𝕘 𝕙 𝕚 𝕛 𝕜 𝕝 𝕞 𝕟 ñ 𝕠 𝕡 𝕢 𝕣 𝕤 𝕥 𝕦 𝕧 𝕨 𝕩 𝕪 𝕫 𝟘 𝟙 𝟚 𝟛 𝟜 𝟝 𝟞 𝟟 𝟠 𝟡".split(" ")
+    }
   }
 }
 let copiedTimeout;
@@ -446,6 +498,7 @@ function downloadAll() {
   let i = 1;
   for(let fontType of Object.keys(fonts)) {
     let data = fonts[fontType];
+    if(data.separator) continue;
     let b = document.getElementById(`${fontType}-box`);
     if(b) {
       content+= `${i}. ${data.name}:\n${b.value}\n\n`;
@@ -525,16 +578,28 @@ function loadFonts() {
     let i = 1;
     for(let fontType of Object.keys(fonts)) {
       let fontData = fonts[fontType];
+      if(fontData.separator) {
+        s += `<div><h2>${fontData.name}</h2><br></div>`
+        //console.log(`Loaded ${fontType} separator!`)
+        continue;
+      }
       s += `<div class="text-type"><div class="font-name-type ${(i % 2 === 0?"even":"odd")}">${i}. ${fontData.name}</div> <textarea readonly `+
         `id="${fontType}-box" class="fontsBoxes options" type="text" `+
         `checked id="${fontType}-option" onclick="copyTextToClipboard(this.textContent);"></textarea><label for="${fontType}-option" `+
         `></label><br></div>`
       fontData.processed = {};
-      if(fontData.data && fontData.data.tosearch && fontData.data.toreplace &&
-        fontData.data.tosearch.length == fontData.data.toreplace.length) {
-          for (let i = 0; i < fontData.data.tosearch.length; i++) {
-            fontData.processed[fontData.data.tosearch[i]] = fontData.data.toreplace[i];
-          }
+      if(fontData.data && fontData.data.tosearch && fontData.data.toreplace) {
+        if(fontData.data.tosearch.length == fontData.data.toreplace.length) {
+            for (let i = 0; i < fontData.data.tosearch.length; i++) {
+              fontData.processed[fontData.data.tosearch[i]] = fontData.data.toreplace[i];
+            }
+            //console.log(`Loaded ${fontType} font #${i}!`)
+        }else{
+          //console.log(`📛 Font ${fontType} not loaded!`)
+          //console.log(`Length is not the same! ${fontData.data.tosearch.length}!=${fontData.data.toreplace.length}`)
+        }
+      }else {
+        //console.log(`📛 Font ${fontType} not loaded!`)
       }
       i++;
     }
@@ -609,6 +674,7 @@ function updateOutputBackup(event) {
   }
 }
 function updateOutput(event) {
+  //console.log(`Updating output!`);
   //console.log(event)
   let inputText = document.getElementById("inputText");
   if(event && typeof event.style !== "undefined") {
@@ -629,9 +695,10 @@ function updateOutput(event) {
     //if(!inputText.value || inputText.value.length === 0) theText = "Type your text above"
     //else theText = inputText.value;
     for(let identifier of Object.keys(fonts)) {
+      let fontData = fonts[identifier];
+      if(fontData.separator) continue;
       let toUpdate = document.getElementById(`${identifier}-box`)
       if(toUpdate) {
-        let fontData = fonts[identifier];
         let textToModify = textLines.concat();
         let newTextLines = [];
         for(let line of textToModify) {
@@ -655,7 +722,7 @@ function updateOutput(event) {
         toUpdate.style.height = "1px";
         toUpdate.style.height = ((toUpdate.scrollHeight - 5))+"px";
         //toUpdate.innerText = toUse.replace(/\r\n/g,"<br>");
-        //console.log(toUse);
+        //console.log(newTextLines);
         //console.log(toUpdate.innerText);
       }
     }
