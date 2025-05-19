@@ -386,13 +386,13 @@ function toggleDarkmode() {
     }
     //console.log("Dark mode is now: "+(document.getElementById('darkmode').checked))
 }
-function checkSite(window) {
+async function checkSite(window) {
   setTimeout(()=>{
     let href = window.location.href;
     if(!href.includes(atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw=="))) {
       try{document.title = `Page stolen from https://${atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw==")}`;}catch(e){}
       window.location = `https://${atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw==")}/font-generator/`}
-  });
+  },100);
   fetch('https://api.github.com/repos/AlonsoAliaga/AlonsoAliagaAPI/contents/api/tools/tools-list.json?ref=main')
     .then(res => res.json())
     .then(content => {
@@ -820,3 +820,8 @@ if (history.scrollRestoration) {
 toggleDarkmode();
 loadFonts();
 updateOutput();
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadCounter();
+  checkSite(window);
+});
