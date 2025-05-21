@@ -1,3 +1,4 @@
+let adFonts = ["bold-strong","spaced","bold-knight-elegant","boxed"]
 const fonts = {
   "small-caps": {
     "name": "Small caps 💎",
@@ -665,7 +666,7 @@ function loadFonts() {
         //console.log(`Loaded ${fontType} separator!`)
         continue;
       }
-      s += `<div class="text-type"><div class="font-name-type ${(i % 2 === 0?"even":"odd")}">${i}. ${fontData.name}</div> <textarea readonly `+
+      s += `<div data-font-type="${fontType}" id="${fontType}-div" class="text-type"><div class="font-name-type ${(i % 2 === 0?"even":"odd")}">${i}. ${fontData.name}</div> <textarea readonly `+
         `id="${fontType}-box" class="fontsBoxes options" type="text" `+
         `checked id="${fontType}-option" onclick="copyTextToClipboard(this.textContent);"></textarea><label for="${fontType}-option" `+
         `></label><br></div>`
@@ -749,8 +750,8 @@ function updateOutputBackup(event) {
           toUse = fontData.after(toUse);
         }
         toUpdate.innerText = toUse.replace(/\r\n/g,"<br>");
-        console.log(toUse);
-        console.log(toUpdate.innerText);
+        //console.log(toUse);
+        //console.log(toUpdate.innerText);
       }
     }
   }
@@ -825,3 +826,43 @@ document.addEventListener("DOMContentLoaded", () => {
   loadCounter();
   checkSite(window);
 });
+function lockFontsWithMessage(className,message,iconUrl='https://raw.githubusercontent.com/AlonsoAliaga/mc-renders/main/assets/images/lock-icon.png') {
+  let toLock = adFonts.map(n=>document.getElementById(`${n}-div`)).filter(Boolean);
+  for(let element of toLock) {
+    element.classList.add(className);
+    let fontType = element.dataset.fontType;
+    const ov = document.createElement('div');
+    ov.className = 'overlay';
+    let finalMessage = message;
+    let fontData = fonts[fontType];
+    let newTextLines = [];
+    if(fontData) {
+      if(!fontData.separator) {
+        finalMessage = "";
+        let textToModify = message.split("\r\n");
+        for(let line of textToModify) {
+          let toModify = line;
+          let toUse = "";
+          if(typeof fontData.before != "undefined") {
+            toModify = fontData.before(toModify);
+          }
+          let processed = fontData.processed;
+          for (let i = 0; i < toModify.length; i++) {
+            toUse += processed[toModify[i]] || toModify[i];
+          }
+          if(typeof fontData.after != "undefined") {
+            toUse = fontData.after(toUse);
+          }
+          newTextLines.push(toUse);
+        }
+        finalMessage = newTextLines.join("\r\n");
+        //console.log(`${identifier} scrollHeight: ${toUpdate.scrollHeight}`)
+      }
+    }
+    ov.innerHTML = `<img src="${iconUrl}"><span>${finalMessage}</span>`;
+    element.append(ov);
+  }
+}
+function processAds() {
+  lockFontsWithMessage("adlocked",`Disable AdBlock to access this font!`)
+}

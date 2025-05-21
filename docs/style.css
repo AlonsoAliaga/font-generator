@@ -533,3 +533,81 @@ ul {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
+
+.adlocked {
+  position: relative;
+}
+.adlocked .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(247, 34, 34, 0.849);
+  display: flex;
+  border-radius: 38px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  cursor: not-allowed;
+  z-index: 10;
+  margin: 8px 8px 30px 8px;
+}
+.adlocked .overlay img {
+  width: 40px;
+}
+.adlocked .overlay span {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.adlockedfit {
+  position: relative;
+}
+.adlockedfit .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(156, 28, 28, 0.829);
+  flex-direction: column;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  cursor: not-allowed;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.adlockedfit .overlay img {
+  width: 30px;
+}
+.adlockedfit .overlay span {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.adlockedsmall {
+  position: relative;
+}
+.adlockedsmall .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(156, 28, 28, 0.829);
+  flex-direction: column;
+  border-radius: 22px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  cursor: not-allowed;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.adlockedsmall .overlay img {
+  width: 25px;
+}
+.adlockedsmall .overlay span {
+  font-size: 12px;
+  color: #ffffff;
+}
