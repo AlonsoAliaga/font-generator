@@ -429,7 +429,7 @@ function loadChecking() {
          counter.style.backgroundColor = "yellow";
         }else{
          //counter.textContent = `🟢 ${result} user${result==1?``:`s`} online using our Minecraft Profile Picture Generator!`;
-         counter.textContent = `🟢 ${result} online using our Minecraft Profile Picture Generator!`;
+         counter.textContent = `🟢 ${result} online using our Font Generator!`;
          counter.style.backgroundColor = "green";
         }
      },
