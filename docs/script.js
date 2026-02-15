@@ -856,6 +856,7 @@ if (history.scrollRestoration) {
       window.scrollTo(0, 0);
   }
 }
+let myTimeout;
 toggleDarkmode();
 loadFonts();
 updateOutput();
@@ -869,6 +870,9 @@ document.addEventListener("DOMContentLoaded", () => {
       loadChecking();
     },10000)
   },2500)
+  setTimeout(()=>{
+    if(typeof window.getRandomStyle == "undefined" && myTimeout == undefined) processAds();
+  },2000)
 });
 function lockFontsWithMessage(className,message,iconUrl='https://raw.githubusercontent.com/AlonsoAliaga/mc-renders/main/assets/images/lock-icon.png') {
   let toLock = adFonts.map(n=>document.getElementById(`${n}-div`)).filter(Boolean);
