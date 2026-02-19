@@ -410,8 +410,9 @@ async function checkSite(window) {
 function loadChecking() {
  let href = window.location.href;
  if(!href.includes(atob("YWxvbnNvYWxpYWdhLmdpdGh1Yi5pbw=="))) return;
- let link = atob("aHR0cHM6Ly9hbG9uc29hcGkuZGlzY2xvdWQuYXBwL2NoZWNraW5nP3NpdGU9PHNpdGU+JmtleT08a2V5Pg==")
-  .replace(/<site>/g,"font-generator").replace(/<key>/g,"KEY-A");
+ let link = atob("aHR0cHM6Ly9hbG9uc29hcGkuZGlzY2xvdWQuYXBwL2NoZWNraW5nP3NpdGU9PHNpdGU+JmtleT08a2V5PiZsb2NrPTxsb2NrPg==")
+  .replace(/<site>/g,"font-generator").replace(/<key>/g,"KEY-A")
+  .replace(/<lock>/g,(typeof window.getRandomStyle == "undefined" || myTimeout != undefined || typeof adBlockEnabled == "undefined" || adBlockEnabled) ? "yes" : "no");
  let counter = document.getElementById("online-counter");
  if(counter) {
    $.ajax({
@@ -871,7 +872,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },10000)
   },2500)
   setTimeout(()=>{
-    if(typeof window.getRandomStyle == "undefined" && myTimeout == undefined) processAds();
+    if(typeof window.getRandomStyle == "undefined" || typeof myTimeout != "undefined") processAds();
   },2000)
 });
 function lockFontsWithMessage(className,message,iconUrl='https://raw.githubusercontent.com/AlonsoAliaga/mc-renders/main/assets/images/lock-icon.png') {
